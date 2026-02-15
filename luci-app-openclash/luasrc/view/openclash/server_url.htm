@@ -1130,6 +1130,9 @@ function parseVless(url, sid) {
             }
         } else if (query.security === 'reality') {
             setFormValue(sid, 'tls', 'true');
+            if (query.flow) {
+                setFormValue(sid, 'vless_flow', query.flow);
+            }
             if (query.sni) {
                 setFormValue(sid, 'servername', decodeURIComponent(query.sni));
             }
